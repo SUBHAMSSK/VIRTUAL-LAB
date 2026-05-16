@@ -1,4 +1,4 @@
-# VIRTUAL-LAB | Digital Twin 🧑‍🔬⚛️
+# VIRTUAL-LAB | Digital Twin 
 
 VIRTUAL-LAB is a collaborative 2D physics sandbox built for university-level experimentation and interactive learning. 
 It functions as a Digital Twin environment — a shared virtual workspace where multiple users can design systems, simulate physical interactions, test structural behavior, and visualize real-time physics collaboratively.
