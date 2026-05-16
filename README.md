@@ -1,60 +1,167 @@
 # VIRTUAL-LAB | Digital Twin 🧑‍🔬⚛️
 
-VIRTUAL-LAB is a collaborative 2D physics sandbox designed for university-level learning. It acts as a "Digital Twin" environment—a shared, high-fidelity workspace where multiple users can build machines, test structural integrity, and observe real-time forces. It bridges the gap between theoretical equations and physical reality through hands-on experimentation.
+VIRTUAL-LAB is a collaborative 2D physics sandbox built for university-level experimentation and interactive learning. 
+It functions as a Digital Twin environment — a shared virtual workspace where multiple users can design systems, simulate physical interactions, test structural behavior, and visualize real-time physics collaboratively.
 
-![VIRTUAL-LAB Banner](https://via.placeholder.com/1000x300.png?text=VIRTUAL-LAB+Digital+Twin)
+The platform transforms theoretical concepts from mechanics and engineering into an engaging, hands-on experience through real-time simulation and analytics.
 
-## 🌟 Key Features
+## 🌟 Features
 
-*   **Interactive Physics Canvas:** A rich web-based workspace powered by **Matter.js**. Users can drag, drop, and configure physical bodies (boxes, circles) with varying masses and restitutions.
-*   **Multi-User Room Engine:** Powered by **Socket.io**, the platform synchronizes the physical state—including shape spawns, constraint connections, and sticky notes—across all users in a room in real-time.
-*   **Advanced Constraint System:** Build mechanical connections using the Spring/Constraint tool. Includes Instructor tools like "Lock" to freeze dynamic objects, and "Motor" to apply continuous angular velocity to gears/pulleys.
-*   **Real-Time Analytics Dashboard:** An integrated telemetry panel utilizing **Chart.js** that parses 60FPS physics data to plot live Line Charts for System Kinetic Energy and System Momentum.
-*   **Experiment Library & Cloud Saves:** Browse pre-configured physics scenarios (e.g., Trebuchet, Pendulum, Car Crash). Instructors can completely configure a custom lab environment on the canvas and **Save to Cloud** (MongoDB) to be loaded globally.
-*   **Collaborative Annotation:** Drop synchronized sticky notes directly onto the physics canvas to highlight stress points or leave instructions for students.
+### ⚙️ Interactive Physics Sandbox
+Built with **Matter.js**, the simulation canvas allows users to:
+* Create dynamic objects like boxes and circles
+* Configure physical properties such as:
+  * Mass
+  * Restitution
+  * Friction
+* Drag, move, and interact with bodies naturally in real time
 
-## 🛠️ Technology Stack
+### 👥 Real-Time Collaboration
+Powered by **Socket.io**, multiple users can work together inside shared rooms with synchronized:
+* Object creation
+* Constraint connections
+* Motors and locks
+* Sticky notes and annotations
+* Physics state updates
 
-*   **Frontend:** React.js, Vite, Matter.js (2D Physics Engine), Chart.js (react-chartjs-2), Tailwind CSS, Lucide React (Icons).
-*   **Backend:** Node.js, Express.js, Socket.io (WebSockets).
-*   **Database:** MongoDB, Mongoose (Cloud storage for experiment templates).
+### 🔗 Advanced Constraint System
+Design complex mechanical systems using:
+* Springs and elastic constraints
+* Object locking tools
+* Rotational motors for gears and pulleys
+
+This enables creation of:
+* Pendulums
+* Suspension systems
+* Gear mechanisms
+* Structural experiments
+
+### 📊 Live Physics Analytics
+Integrated telemetry dashboards visualize simulation data in real time using **Chart.js**:
+* System Kinetic Energy
+* System Momentum
+* Dynamic physics trends at 60 FPS
+
+### ☁️ Experiment Library & Cloud Saves
+Users and instructors can:
+* Load predefined experiments
+* Save custom lab environments to MongoDB
+* Share reusable experiment templates globally
+
+Example experiments include:
+* Pendulum systems
+* Trebuchets
+* Car collision simulations
+* Mechanical gear setups
+
+### 📝 Collaborative Annotations
+Sticky notes can be placed directly onto the simulation canvas to:
+* Highlight observations
+* Explain concepts
+* Mark stress points
+* Leave collaborative instructions
+
+## 🛠️ Tech Stack
+**Frontend**
+* React.js
+* Vite
+* Matter.js
+* Tailwind CSS
+* Chart.js (react-chartjs-2)
+* Lucide React
+
+**Backend**
+* Node.js
+* Express.js
+* Socket.io
+
+**Database**
+* MongoDB
+* Mongoose
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-Make sure you have the following installed on your local machine:
-*   [Node.js](https://nodejs.org/en/) (v16 or higher)
-*   [MongoDB](https://www.mongodb.com/try/download/community) (Running locally on default port `27017`)
+Make sure the following are installed on your system:
+* Node.js (v16 or higher)
+* MongoDB (running locally on port `27017`)
 
-### 1. Backend Setup (Room Engine & Database)
-Open a terminal and navigate to the backend directory:
+### 1️⃣ Backend Setup
+Navigate to the backend folder:
 ```bash
 cd backend
+```
+Install dependencies:
+```bash
 npm install
+```
+Start the backend server:
+```bash
 npm run dev
 ```
-*The server will start on `http://localhost:5000` and connect to MongoDB.*
+The backend will start at: `http://localhost:4000` *(Note: updated port to 4000 to avoid macOS conflicts)*
 
-### 2. Frontend Setup (React Client)
-Open a **new** terminal window and navigate to the frontend directory:
+### 2️⃣ Frontend Setup
+Open a new terminal and navigate to the frontend folder:
 ```bash
 cd frontend
+```
+Install dependencies:
+```bash
 npm install
+```
+Start the frontend server:
+```bash
 npm run dev
 ```
-*The Vite development server will start, usually on `http://localhost:5173`. Open this URL in multiple browser windows to test the real-time collaboration!*
+The application will usually run at: `http://localhost:5173`
 
-## 🎮 How to Use
+*Open multiple browser tabs/windows to test real-time collaboration.*
 
-1.  **Select & Move:** Default tool. Click and drag objects naturally.
-2.  **Create Box / Circle:** Click anywhere on the dark canvas to spawn a dynamic body.
-3.  **Create Spring:** Click the first body (Anchor A), then click a second body (Anchor B) to wire them together with an elastic constraint.
-4.  **Lock Object:** Click any dynamic body to toggle its static state (freeze it in mid-air).
-5.  **Add Motor:** Click an object to convert it into a motor with continuous angular velocity. Perfect for creating gears.
-6.  **Add Sticky Note:** Click anywhere to leave a text annotation for the class.
-7.  **Library:** Click the Library button in the top header to load a predefined experiment, or retrieve a custom lab previously saved to the Cloud.
+## 🎮 Usage Guide
 
-## 📝 Roadmap Completion
-- [x] **MVP:** Drag-and-drop shapes, basic constraints, real-time sync, simple analytics.
-- [x] **Phase 2:** Experiment library, expanded analytics (momentum charts), instructor lock tools.
-- [x] **Phase 3:** Motors/gears, collaborative annotations, cloud-based MongoDB integration.
+| Tool | Description |
+| :--- | :--- |
+| **Select & Move** | Drag and reposition objects naturally |
+| **Create Box / Circle** | Spawn physical bodies onto the canvas |
+| **Create Spring** | Connect two objects with elastic constraints |
+| **Lock Object** | Freeze objects in place |
+| **Add Motor** | Apply rotational velocity to objects |
+| **Sticky Notes** | Add collaborative annotations |
+| **Library** | Load saved or predefined experiments |
+
+## 🧪 Example Use Cases
+* Physics laboratory simulations
+* Mechanical system prototyping
+* Engineering demonstrations
+* Classroom collaboration
+* Structural behavior visualization
+* Interactive educational experiments
+
+## 📂 Project Structure
+```text
+VIRTUAL-LAB/
+│
+├── frontend/        # React + Matter.js client
+├── backend/         # Express + Socket.io server
+├── backend/models/  # MongoDB schemas
+└── README.md
+```
+
+## 🔮 Future Enhancements
+* Multi-room classroom management
+* User authentication and roles
+* Advanced force/vector visualization
+* Export simulation recordings
+* 3D physics support
+* AI-assisted experiment generation
+
+## 🤝 Contributing
+Contributions are welcome!
+
+To contribute:
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push the branch
+5. Open a Pull Request
